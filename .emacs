@@ -295,7 +295,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
     (find-file f)))
 
 (add-hook 'dired-load-hook
-          (function (lambda () (load "dired-x") (define-key dired-mode-map (kbd "C-<return>") 'dired-open-all-files))))
+          (function (lambda () (load "dired-x") (define-key dired-mode-map (kbd "F") 'dired-open-all-files))))
 
 (define-key global-map (kbd "C-x C-d") 'dired)
 (define-key global-map (kbd "C-x C-r") 'find-name-dired)
@@ -853,4 +853,4 @@ Repeated invocations toggle between the two most recently open buffers."
 
 
 
-(put 'dired-find-alternate-file 'disabled nil)
+;; (put 'dired-find-alternate-file 'disabled nil)
