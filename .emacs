@@ -532,10 +532,10 @@ With argument ARG, do this that many times."
 ;; highlight selection
 (require 'loccur)
 ;; defines shortcut for loccur of the current word
-(define-key global-map (kbd "C-o") 'loccur-empty)
+(define-key global-map (kbd "C-o") 'loccur-current)
 (define-key global-map (kbd "C-S-o") 'loccur-summary)
 ;; defines shortcut for the interactive loccur command
-(define-key global-map (kbd "M-o") 'loccur)
+(define-key global-map (kbd "M-o") 'loccur-empty)
 
 
 ;; hi lock
