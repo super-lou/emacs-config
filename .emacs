@@ -16,21 +16,32 @@
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (require 'package)
-;; (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")))
-;; (add-to-list 'package-archives
-;;              '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/powerline-master/")
 (add-to-list 'load-path "~/.emacs.d/lisp/centaur-tabs-master/")
+(add-to-list 'load-path "~/.emacs.d/lisp/term-keys/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (add-to-list 'exec-path "/Library/TeX/texbin")
 
 (package-initialize)
+
+
+
+;; (setq xterm-extra-capabilities 't)
+
+(require 'term-keys)
+(term-keys-mode t)
+(require 'term-keys-konsole)
+(with-temp-buffer
+  (insert (term-keys/konsole-keytab))
+  (append-to-file (point-min) (point-max) "~/.local/share/konsole/Emacs.keytab"))
+
 
 
 ;                           --------------------
